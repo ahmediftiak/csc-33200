@@ -1,0 +1,36 @@
+Q2. (50 Points) (Threads)
+Consider the following code. What is the MAXIMUM value printed? Give a Scenario  for this value.
+NOTE: the scenario is critical. If the scenario is grossly wrong, then your answer is essentially a guess and you lose a lot of points. 
+
+cobegin-coend are as discussed in slides. 
+Assume that all the variables before cobegin are in heap; so they are shared with the children threads.
+As in slides, after coend is done (i.e., children thread have finished), the parent thread resumes execution.
+
+				int counter=0;		//in heap.
+				cobegin
+for (int i=0; i<1000; i++)			for (int i=0; i<1000; i++)
+	counter++;					counter = counter - 1; //WATCH OUT!!
+				coend
+				print(counter);
+
+
+Answer:
+MAX = 1000
+
+Scenario:
+		Thread 1				Thread 2
+As part of counter++, Load value of
+counter into R1
+Then, i == counter == R1 == 0			
+							Finish the Iterations and then exit.
+stores R1 into counter.
+Increment i
+then counter = i == 1
+we do this (counter++; ¡++) 999 times.
+Thus, counter == ¡ == 1000
+Exit
+
+Parent thread prints 1000
+
+Explanation:
+Thread 1 starts first and then Thread 2 starts, finish the iterations and finish. After that, Thread 1 overwrites the Thread 2 values which gives the max value of 1000.

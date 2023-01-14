@@ -1,0 +1,13 @@
+Q1. (50 Points) (Memory)
+Consider the memory management scheme using paging.
+Let T be the page frame number column in the page table. Assume that the page table for process 2 satisfies T[i]=2i+3 for all pages i.
+Assume that the page size is 64 bytes.
+Convert the PHYSICAL  ADDRESS 2000  in process 2 to the corresponding logical  address. All numbers here and in your answer are in decimal. Show detailed calculations.
+
+
+Solution:
+Page frame number = 2000/64 = 31
+Offset = 2000 - 31*64 = 16
+2i+3 = 31, so i = 14
+page number = 14
+Logical address = 14*64 + 16 = 896+16 = 912

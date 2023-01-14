@@ -1,0 +1,10 @@
+Q2. Answer the following 3 questions, each in less than 30 words.
+
+(a) Does a compiler satisfy the Resource Management goal of an Operating System?
+The compiler's job is to translate high-level code to machine code. It has no way of managing the usage of hardware resources, does not support the OS's resource management goal.
+
+(b) Does an ADD instruction change the contents of the PSW register? Explain.
+An ADD instruction changed the overflow bit and the psw is used to set the remainders.
+
+(c) What is the basic  motivation to have a DMA?
+A DMA acts like another CPU, another module connected at the system bus and takes care of the entire i/o request and when done, it sends an interrupt signal.

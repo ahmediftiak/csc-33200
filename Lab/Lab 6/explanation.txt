@@ -1,0 +1,17 @@
+For Task 6, I had issues with the buffer incrementing without being incremented and printing twice for the agent
+(I made sure to confirm that only one of the processes was acting as the agent).
+Because I was unable to eliminate the problems, I chose to complete the base version in order to submit a usable document.
+I'll add the extra credit version because it's halfway finished and would function if it weren't for the bugs.
+
+In both versions, I use three fork() calls to create a total of four processes. I did so by having the process which saw
+the pid output of the previous fork as greater than zero perform another fork. I also defined TOBACCO as 0, PAPER as 1,
+and MATCH as 2. This convention is used throughout the code.
+
+Forking smokers (three smokers) Smoker with tobacco has awaken with item 0 Queue created: 1371,1372,1373 Agent
+putting things on the table Agent put tobacco (item 0) on the table Agent put match (item 2) on the table Agent
+waking up next smoker in queue: 0 Agent putting things on the table Agent put tobacco (item 0) on the table Agent put match
+(item 2) on the table Agent waking up next smoker in queue: 0 Smoker with tobacco found items 0 and 2 on table Smoker with
+tobacco was not able to smoke Smoker with tobacco waking up next smoker in queue: 1 Smoker with paper has awaken with item
+1 Smoker with paper found items 1 and 2 on table Smoker with paper was not able to smoke Smoker with paper waking up
+next smoker in queue: 2 Smoker with match has awaken with item 2 Smoker with match found items 2 and 2 on table Smoker
+with match was not able to smoke Smoker with match waking up next smoker in queue: 0

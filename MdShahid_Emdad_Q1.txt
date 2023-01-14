@@ -1,0 +1,21 @@
+Q1.
+Convert the given  code fragment to assembly code fragment:
+
+if ((X + Y) > 0) then Y=X+Y
+else X=Y+X
+L:
+
+Answer:
+
+Load X, R1
+Add Y, R1
+jmpp L; if ((X+Y)>0), X > -Y or same as Y > -X, its positive
+
+add Y, X; else, X = X + Y
+jmp L2; if it is not true, L does not execute
+
+L1: Add X, Y; Y = Y + X
+L2:
+
+
+

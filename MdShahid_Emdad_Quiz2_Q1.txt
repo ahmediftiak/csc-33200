@@ -1,0 +1,19 @@
+Q1. (50 Points)
+Consider the interrupt mechanism discussed in class with the following modification. In the interrupt vector, each PSW value has the mode bit=”user”. 
+
+A special machine instruction is provided, whose meaning is to change the mode bit in the PSW register to “supervisor”. The first instruction of each service routine will be this special instruction.
+
+Assume that the logical and physical addresses are same and memory protection is not being done (so before fetching an instruction in the service routine, the cpu will not complain that the address is outside user’s memory area.)
+
+There are no other changes to the interrupt mechanism
+that we discussed in class.
+
+Will this scheme work?
+Explain in LESS THAN 50 WORDS.
+
+
+SOLUTION:
+
+There are 2 different scenarios that needs to be take into consideration:
+1.	If the special instruction is privileged it will not work because the mode bit is set to"user.
+2.	But, if it is not privileged, it will work because user can run non privileged instructions
